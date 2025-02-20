@@ -1,6 +1,5 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import Product from '../backend/models/product.model.js';
+
 import { createProduct, deleteProduct, getProducts, updateProduct } from '../backend/controllers/product.controller.js';
 
 const router = express.Router();
