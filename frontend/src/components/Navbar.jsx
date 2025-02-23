@@ -1,8 +1,8 @@
 import { Button, Container, Flex, HStack, Text} from "@chakra-ui/react";
-import {useColorMode,} from "./ui/color-mode";
+import {useColorMode, useColorModeValue,} from "./ui/color-mode";
 
 import { Link } from "react-router-dom";
-import React from 'react'
+import React, { use } from 'react'
 
 //icons
 import { CiSquarePlus } from "react-icons/ci";
@@ -14,7 +14,7 @@ import { LuSun } from "react-icons/lu";
 const navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-   <Container maxW={"1140px"} px={4}>
+   <Container maxW={"1140px"} px={4} bg={useColorModeValue("gray.100", "gray.900")}>
 			<Flex
 				h={16}
 				alignItems={"center"}
