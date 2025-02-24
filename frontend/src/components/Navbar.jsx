@@ -10,9 +10,9 @@ import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 
 
-
 const navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+
   return (
    <Container maxW={"1140px"} px={4} bg={useColorModeValue("gray.100", "gray.900")}>
 			<Flex
