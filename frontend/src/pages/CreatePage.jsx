@@ -1,8 +1,9 @@
-import { Box, Button, Container, Heading, Input, VStack} from "@chakra-ui/react";
-import {useColorModeValue,} from "../components/ui/color-mode";
+import { Box, Button, Container, Heading, Input, VStack } from '@chakra-ui/react';
+import { useColorModeValue } from "../components/ui/color-mode";
+
+import { toast, Bounce } from 'react-toastify';
 import { useState } from "react";
 import { useProductStore } from "../store/product";
-
 
 const CreatePage = () => {
     const [newProduct, setNewProduct] = useState({
@@ -11,13 +12,40 @@ const CreatePage = () => {
     image: "",
   });
   
+  
 
   const { createProduct } = useProductStore();
 
   const handleAddProduct = async() => {
       const {success, message} = await createProduct(newProduct);
-      console.log("Success",success);
-   console.log("Message",message);
+      if(!success){
+        toast.error(message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+            });
+        
+
+      }else{
+        toast.success(message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+            });
+        
+      }
   };
 
   return (
