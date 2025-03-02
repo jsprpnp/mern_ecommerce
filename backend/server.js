@@ -16,6 +16,6 @@ app.use('/api/products',productRoutes);
 app.listen (PORT, () => {
     connnectDB();
 
-  console.log('Server is running on http://localhost:', PORT);
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
 
