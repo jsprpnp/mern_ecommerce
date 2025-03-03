@@ -40,7 +40,7 @@ const navbar = () => {
 
             <Link to={"/create"}>
                 <Button>
-                   <CiSquarePlus textStyle={20}/>
+                   <CiSquarePlus fontSize={20}/>
                 </Button>
               </Link>
 
