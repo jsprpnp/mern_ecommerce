@@ -25,7 +25,8 @@ const navbar = () => {
 				}}
 			>
 				<Text
-					fontSize={{ base: "22", sm: "28" }}
+					textStyle="2xl"
+					//fontSize={{ base: "22", sm: "28" }}
 					fontWeight={"bold"}
 					textTransform={"uppercase"}
 					textAlign={"center"}
@@ -39,7 +40,7 @@ const navbar = () => {
 
             <Link to={"/create"}>
                 <Button>
-                   <CiSquarePlus fontSize={20}/>
+                   <CiSquarePlus textStyle={20}/>
                 </Button>
               </Link>
 
