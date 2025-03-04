@@ -82,6 +82,7 @@ const ProductCard = ({product}) => {
 
 	const handleUpdateProduct = async (pid, updatedProduct) => {
 		const { success, message } = await updateProduct(pid, updatedProduct);
+		<DialogActionTrigger/>
 		
 		if(!success){
 				toast.error(message, {
@@ -136,7 +137,7 @@ const ProductCard = ({product}) => {
             <HStack gap={2}>
 
 					
-					<DialogRoot>
+					<DialogRoot >
       
 						<DialogTrigger asChild>
 							<IconButton colorPalette='blue' >
@@ -154,17 +155,20 @@ const ProductCard = ({product}) => {
 							<DialogBody pb="4">
 
 							<Stack gap="4">
-								<Field label="Product Name">
+								
+								<Field required label="Product Name" errorText="This field is required">
 								<Input placeholder = "Product Name" value={updatedProduct.name}
 								onChange={(e) => setUpdatedProduct({...updatedProduct, name: e.target.value})}
-								/>
+								/>	
+
 								</Field>
-								<Field label="Price">
+								<Field required label="Price" errorText="This field is required">
 								<Input placeholder = "Price" type = 'number' value={updatedProduct.price}
 								onChange={(e) => setUpdatedProduct({...updatedProduct, price: e.target.value})}
 								/>
 								</Field>
-								<Field label = "Image URL">
+								
+								<Field required label = "Image URL" errorText="This field is required">
 								<Input placeholder = "Image URL" value={updatedProduct.image}
 								onChange={(e) => setUpdatedProduct({...updatedProduct, image: e.target.value})}
 								/>
@@ -179,9 +183,13 @@ const ProductCard = ({product}) => {
 							<Button variant="outline" >Cancel</Button>
 							</DialogActionTrigger>
 
+
 							<DialogActionTrigger asChild>
+						
 							<Button colorPalette={'blue'} onClick={() => handleUpdateProduct(product._id, updatedProduct)}>Update</Button>
 							</DialogActionTrigger>
+
+
 							
 							
 							</DialogFooter>
