@@ -62,7 +62,7 @@ const CreatePage = () => {
                 >
                     <VStack spaceing={4}>
 
-                        <Input
+                        <Input 
 							placeholder='Product Name'
 							name='name'
 							value={newProduct.name}
